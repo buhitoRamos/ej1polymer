@@ -57,29 +57,10 @@
         };
       }
       agregar(){
-            var creado=false;
-            var existe=false;
+           
               var unUsuario= new Usuario(this.user, this.pass);
+              vector.push(unUsuario);
               
-             vector.forEach(usuario => {
-                 if(unUsuario.user!=usuario.user){
-                    vector.push(unUsuario);  
-                    creado=true; 
-                    existe=false;              
-
-                 }
-                 else{existe=true;
-                 creado=false;
-                }
-                 
-
-             });       
-             if(creado){
-                alert("Usuario creado satisfactoriamente")  
-             }  
-             if(existe){alert("El usuario ya existe, intente con otro")}   
-             
-
         }
 
 

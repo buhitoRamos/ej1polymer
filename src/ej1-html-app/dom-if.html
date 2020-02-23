@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
+<link rel="import" href="domRepeat.html">
+<dom-module id="d-if">
+    <template>
+        <br>
+        <button on-click="cargarDatos">cargar datos</button>
+      
+          <template is="dom-if" if="{{view}}" restamp="true" >
+            <tem-rep></tem-rep>
+          </template>
+    </template> 
+
+    <script>
+        class domIf extends Polymer.Element{
+            static get is(){return 'd-if';}
+            static get properties(){
+                return{
+                    view: Boolean,
+                    
+                }
+            }
+            cargarDatos(){
+               
+                this.view=true;
+
+                 }
+
+        }
+        window.customElements.define(domIf.is, domIf)
+    </script>
+</dom-module>

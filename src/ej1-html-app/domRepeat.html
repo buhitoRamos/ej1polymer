@@ -3,34 +3,13 @@
 
 <dom-module id="tem-rep">   
     <template>
-        <div>        
-        <style>
-            div{               
-                width:  300px;
-                height: 300px;
-                background-color: darkgray;
-                display: inline-block;
-            }
-            button{
-                margin-left: 40%;
-                top: 0px    ;
-            }
-            li{
-                display: inline;
-                background-color: darkcyan;
-            }
-        </style>
-        
-    <template is="dom-repeat" items={{prueba}} as="usuario">
+      <template is="dom-repeat" items={{prueba}} as="usuario">
      
          <li>
-        <h2>{{usuario.user}}</h2>
-    </li>
+          <h2>usuario: {{usuario.user}} pasword: {{usuario.pass}}</h2>
+         </li>
       
     </template>
-    <button  on-click="cargarT">cargar</button>
-</div>
-
 </template>
   
     <script>
@@ -48,10 +27,11 @@
           };
         
         }
-      cargarT(){
+        ready(){
+          super.ready();
           this.prueba=vector;
-        
-      }
+        }
+      
   
     }
      

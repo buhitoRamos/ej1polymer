@@ -7,6 +7,5 @@ class Usuario{
        }
 }
 var vector=[];
-var a= new Usuario(" "," ");
-vector.push(a);  
+ 
   
