@@ -3,14 +3,10 @@ class Usuario{
    
     this.user=user;
     this.pass=pass;
-    this.nombre="";
-    this.apellido="";
-    this.dni="";
-    this.sexo="";
-    this.fecha ="";
-    this.localidad="";    
-    this.tratamiento="";
+    
+       }
 }
-
-
-}
+var vector=[];
+var a= new Usuario(" "," ");
+vector.push(a);  
+  
