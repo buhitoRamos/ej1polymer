@@ -1,19 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
 
-
-
-
-<dom-module id="tem-rep">
-    
-    
+<dom-module id="tem-rep">   
     <template>
-        <div>
-        
+        <div>        
         <style>
-            div{
-                
-               
+            div{               
                 width:  300px;
                 height: 300px;
                 background-color: darkgray;
@@ -29,14 +21,11 @@
             }
         </style>
         
-    <template is="dom-repeat" items={{prueba2}} as="casa">
-       
+    <template is="dom-repeat" items={{prueba}} as="usuario">
      
          <li>
-        <h2>{{casa.user}}</h2>
+        <h2>{{usuario.user}}</h2>
     </li>
-   
-   
       
     </template>
     <button  on-click="cargarT">cargar</button>
@@ -55,23 +44,17 @@
         static get properties() {
           return {
             prueba2: Array,
-            
-            
                  
           };
         
-      }
+        }
       cargarT(){
-          this.prueba2=vector;
+          this.prueba=vector;
         
       }
-      
-    
-    
+  
     }
      
-      
-  
       window.customElements.define(domRepeat.is, domRepeat);
     </script>
   </dom-module>
