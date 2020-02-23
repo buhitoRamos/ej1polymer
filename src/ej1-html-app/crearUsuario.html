@@ -1,0 +1,90 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+
+<dom-module id="crear-usuario">
+  <template>
+    <style>
+        
+      form{
+          padding: 5px;
+          margin-top:20px;
+          border: 1px solid;
+          background-color: whitesmoke;
+          display: inline-block;
+          color: #3498db;
+          text-align: center;
+      }
+      button{
+          
+          color: white;
+          margin-left:40px;
+
+          transform: translate(-50%, -50%);
+          vertical-align: middle;
+          font-family: 'Rubik One', sans-serif;
+          text-decoration: none;
+          font-size: 15px;
+          transition: all .5s;
+          background-color: #3498db;
+        }
+      
+      
+      </style>
+     <form action="#" method="get">
+      <h3>Alta de Usuarios nuevos</h3>
+      <input type="text" placeholder="Nombre de Usuario" value="{{user::input}}">
+      <br>
+      <input type="password" placeholder="Contraseña" value="{{pass::input}}">
+     <br><br>
+     <button id="cargar" on-click="agregar">Agregar</button> 
+     
+  
+      </form>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class crearUsuario extends Polymer.Element {
+      static get is() { return 'crear-usuario'; }
+      static get properties() {
+        return {
+                user: String,
+                pass: String,
+                
+        };
+      }
+      agregar(){
+            var creado=false;
+            var existe=false;
+              var unUsuario= new Usuario(this.user, this.pass);
+              
+             vector.forEach(usuario => {
+                 if(unUsuario.user!=usuario.user){
+                    vector.push(unUsuario);  
+                    creado=true; 
+                    existe=false;              
+
+                 }
+                 else{existe=true;
+                 creado=false;
+                }
+                 
+
+             });       
+             if(creado){
+                alert("Usuario creado satisfactoriamente")  
+             }  
+             if(existe){alert("El usuario ya existe, intente con otro")}   
+             
+
+        }
+
+
+    }
+
+    window.customElements.define(crearUsuario.is, crearUsuario);
+  </script>
+</dom-module>

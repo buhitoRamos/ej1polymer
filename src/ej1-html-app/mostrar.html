@@ -1,0 +1,77 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+
+
+
+<dom-module id="mostrar-usuario">
+  <template>
+    <style>
+      textarea{
+        background-color: aqua;
+        color: blue;
+      }
+      div{
+        margin: 10px;
+        display: inline-block;
+        background-color: cornsilk;
+      } 
+      button{
+        margin-left: 30%;
+      }       
+      
+      </style>
+      <div>
+        <textarea name="caja"  cols="30" rows="10" >{{dato::input}}</textarea>
+        <br>
+        <button id="cargar" on-click="mostrar">mostrar</button>
+
+      </div>
+  
+    
+      
+    
+  </template>
+ 
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class mostrarUsuario extends Polymer.Element {
+      static get is() { return 'mostrar-usuario'; }
+      static get properties() {
+        return {
+          dato: String,
+          
+               
+        };
+      
+    }
+    mostrar(){
+      var aux2="";
+    vector.forEach(usuario => {
+      if(usuario.user!=" "){
+        var aux="usuario= "+usuario.user+"\n";
+      aux2=aux2+aux
+
+      }
+      
+      
+
+
+      
+    });
+    this.dato=aux2;
+      
+
+    }
+  
+  
+  }
+   
+    
+
+    window.customElements.define(mostrarUsuario.is, mostrarUsuario);
+  </script>
+</dom-module>
